@@ -1,0 +1,165 @@
+version: '3.8'
+
+services:
+  # MySQL Database
+  mysql:
+    image: mysql:8.0
+    container_name: hyperlocal-mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
+      MYSQL_DATABASE: ${DB_NAME}
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+    networks:
+      - hyperlocal-network
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "-p${DB_PASSWORD}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # User Service
+  user-service:
+    build:
+      context: .
+      dockerfile: services/user_service/Dockerfile
+    container_name: hyperlocal-user-service
+    restart: always
+    depends_on:
+      mysql:
+        condition: service_healthy
+    environment:
+      - DB_HOST=mysql
+      - DB_PORT=3306
+      - DB_USER=${DB_USER}
+      - DB_PASSWORD=${DB_PASSWORD}
+      - DB_NAME=${DB_NAME}
+      - JWT_SECRET_KEY=${JWT_SECRET_KEY}
+      - FIREBASE_CREDENTIALS=${FIREBASE_CREDENTIALS}
+    ports:
+      - "8001:8001"
+    networks:
+      - hyperlocal-network
+
+  # Seller Service
+  seller-service:
+    build:
+      context: .
+      dockerfile: services/seller_service/Dockerfile
+    container_name: hyperlocal-seller-service
+    restart: always
+    depends_on:
+      mysql:
+        condition: service_healthy
+      user-service:
+        condition: service_started
+    environment:
+      - DB_HOST=mysql
+      - DB_PORT=3306
+      - DB_USER=${DB_USER}
+      - DB_PASSWORD=${DB_PASSWORD}
+      - DB_NAME=${DB_NAME}
+      - JWT_SECRET_KEY=${JWT_SECRET_KEY}
+      - AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}
+      - AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY}
+      - AWS_REGION=${AWS_REGION}
+      - S3_BUCKET_NAME=${S3_BUCKET_NAME}
+      - USER_SERVICE_URL=http://user-service:8001
+    ports:
+      - "8002:8002"
+    networks:
+      - hyperlocal-network
+
+  # Customer Service
+  customer-service:
+    build:
+      context: .
+      dockerfile: services/customer_service/Dockerfile
+    container_name: hyperlocal-customer-service
+    restart: always
+    depends_on:
+      mysql:
+        condition: service_healthy
+      user-service:
+        condition: service_started
+      seller-service:
+        condition: service_started
+    environment:
+      - DB_HOST=mysql
+      - DB_PORT=3306
+      - DB_USER=${DB_USER}
+      - DB_PASSWORD=${DB_PASSWORD}
+      - DB_NAME=${DB_NAME}
+      - JWT_SECRET_KEY=${JWT_SECRET_KEY}
+      - USER_SERVICE_URL=http://user-service:8001
+      - SELLER_SERVICE_URL=http://seller-service:8002
+    ports:
+      - "8003:8003"
+    networks:
+      - hyperlocal-network
+
+  # Catalog Service
+  catalog-service:
+    build:
+      context: .
+      dockerfile: services/catalog_service/Dockerfile
+    container_name: hyperlocal-catalog-service
+    restart: always
+    depends_on:
+      mysql:
+        condition: service_healthy
+    environment:
+      - DB_HOST=mysql
+      - DB_PORT=3306
+      - DB_USER=${DB_USER}
+      - DB_PASSWORD=${DB_PASSWORD}
+      - DB_NAME=${DB_NAME}
+      - JWT_SECRET_KEY=${JWT_SECRET_KEY}
+    ports:
+      - "8004:8004"
+    networks:
+      - hyperlocal-network
+
+  # Admin Service
+  admin-service:
+    build:
+      context: .
+      dockerfile: services/admin_service/Dockerfile
+    container_name: hyperlocal-admin-service
+    restart: always
+    depends_on:
+      mysql:
+        condition: service_healthy
+      user-service:
+        condition: service_started
+      seller-service:
+        condition: service_started
+      customer-service:
+        condition: service_started
+      catalog-service:
+        condition: service_started
+    environment:
+      - DB_HOST=mysql
+      - DB_PORT=3306
+      - DB_USER=${DB_USER}
+      - DB_PASSWORD=${DB_PASSWORD}
+      - DB_NAME=${DB_NAME}
+      - JWT_SECRET_KEY=${JWT_SECRET_KEY}
+      - USER_SERVICE_URL=http://user-service:8001
+      - SELLER_SERVICE_URL=http://seller-service:8002
+      - CUSTOMER_SERVICE_URL=http://customer-service:8003
+      - CATALOG_SERVICE_URL=http://catalog-service:8004
+    ports:
+      - "8005:8005"
+    networks:
+      - hyperlocal-network
+
+networks:
+  hyperlocal-network:
+    driver: bridge
+
+volumes:
+  mysql_data:
