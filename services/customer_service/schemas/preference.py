@@ -43,7 +43,7 @@ class PreferenceResponse(PreferenceBase):
     updated_at: datetime
 
     class Config:
-        orm_mode = True
+        from_attributes = True
 
 
 class LocationQuery(BaseModel):

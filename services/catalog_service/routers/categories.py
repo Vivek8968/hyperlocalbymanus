@@ -12,8 +12,8 @@ from common.auth.jwt import get_current_user
 from common.exceptions.http_exceptions import ResourceNotFoundException, UnauthorizedException
 
 # Import schemas and services
-from schemas.category import CategoryCreate, CategoryUpdate, CategoryResponse
-from services.category_service import CategoryService
+from services.catalog_service.schemas.category import CategoryCreate, CategoryUpdate, CategoryResponse
+from services.catalog_service.services.category_service import CategoryService
 
 router = APIRouter()
 oauth2_scheme = OAuth2PasswordBearer(tokenUrl="auth/login")

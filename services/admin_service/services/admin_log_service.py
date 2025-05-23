@@ -5,8 +5,8 @@ from sqlalchemy import func, and_, or_
 from typing import Optional, List, Dict, Any, Tuple
 from datetime import datetime
 
-from models.admin_log import AdminLog
-from schemas.admin_log import AdminLogFilter
+from services.admin_service.models.admin_log import AdminLog
+from services.admin_service.schemas.admin_log import AdminLogFilter
 from common.exceptions.http_exceptions import (
     ResourceNotFoundException,
     DatabaseException,

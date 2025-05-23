@@ -13,10 +13,10 @@ from common.exceptions.http_exceptions import ResourceNotFoundException
 from common.utils.geo import GeoService
 
 # Import schemas and services
-from schemas.shop import ShopSearchResponse, ShopDetailResponse, ShopWithProductsResponse
-from schemas.preference import LocationQuery
-from services.discovery_service import DiscoveryService
-from services.preference_service import PreferenceService
+from services.customer_service.schemas.shop import ShopSearchResponse, ShopDetailResponse, ShopWithProductsResponse
+from services.customer_service.schemas.preference import LocationQuery
+from services.customer_service.services.discovery_service import DiscoveryService
+from services.customer_service.services.preference_service import PreferenceService
 
 router = APIRouter()
 oauth2_scheme = OAuth2PasswordBearer(tokenUrl="auth/login")

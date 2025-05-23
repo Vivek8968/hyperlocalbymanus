@@ -53,7 +53,7 @@ class ShopResponse(ShopBase):
     updated_at: datetime
 
     class Config:
-        orm_mode = True
+        from_attributes = True
 
 
 class ShopWithInventoryResponse(ShopResponse):
@@ -63,7 +63,7 @@ class ShopWithInventoryResponse(ShopResponse):
     inventory_items: List["InventoryItemResponse"] = []
 
     class Config:
-        orm_mode = True
+        from_attributes = True
 
 
 class ImageUploadResponse(BaseModel):

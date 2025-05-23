@@ -42,7 +42,7 @@ class InventoryItemResponse(InventoryItemBase):
     updated_at: datetime
 
     class Config:
-        orm_mode = True
+        from_attributes = True
 
 
 class CatalogItemBrief(BaseModel):
@@ -57,7 +57,7 @@ class CatalogItemBrief(BaseModel):
     image_url: Optional[HttpUrl] = None
 
     class Config:
-        orm_mode = True
+        from_attributes = True
 
 
 class InventoryItemWithCatalogResponse(InventoryItemResponse):
@@ -67,4 +67,4 @@ class InventoryItemWithCatalogResponse(InventoryItemResponse):
     catalog_item: Optional[CatalogItemBrief] = None
 
     class Config:
-        orm_mode = True
+        from_attributes = True

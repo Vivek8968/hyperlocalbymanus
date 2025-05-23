@@ -15,7 +15,7 @@ from common.exceptions.http_exceptions import AppException, exception_handler
 from common.utils.logging import setup_logger
 
 # Import routers
-from routers import auth
+from services.user_service.routers import auth
 
 # Get settings
 settings = get_settings()

@@ -4,8 +4,8 @@ from sqlalchemy.exc import IntegrityError
 from sqlalchemy import or_, func
 from typing import Optional, List, Dict, Any, Tuple
 
-from models.catalog import CatalogItem
-from models.category import Category
+from services.catalog_service.models.catalog import CatalogItem
+from services.catalog_service.models.category import Category
 from common.exceptions.http_exceptions import (
     ResourceNotFoundException,
     DatabaseException,

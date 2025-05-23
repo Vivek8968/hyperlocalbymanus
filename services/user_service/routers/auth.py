@@ -13,8 +13,8 @@ from common.auth.jwt import create_access_token, get_current_user
 from common.exceptions.http_exceptions import UnauthorizedException
 
 # Import schemas and services
-from schemas.user import UserCreate, UserResponse, TokenResponse, FirebaseAuthRequest
-from services.user_service import UserService
+from services.user_service.schemas.user import UserCreate, UserResponse, TokenResponse, FirebaseAuthRequest
+from services.user_service.services.user_service import UserService
 
 router = APIRouter()
 

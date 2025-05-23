@@ -3,7 +3,7 @@ from sqlalchemy.future import select
 from sqlalchemy.exc import IntegrityError
 from typing import Optional, List, Dict, Any, Tuple
 
-from models.category import Category
+from services.catalog_service.models.category import Category
 from common.exceptions.http_exceptions import (
     ResourceNotFoundException,
     DatabaseException,

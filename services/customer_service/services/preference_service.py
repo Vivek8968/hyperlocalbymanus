@@ -3,7 +3,7 @@ from sqlalchemy.future import select
 from sqlalchemy.exc import IntegrityError
 from typing import Optional, List, Dict, Any, Tuple
 
-from models.preference import CustomerPreference
+from services.customer_service.models.preference import CustomerPreference
 from common.exceptions.http_exceptions import (
     ResourceNotFoundException,
     DatabaseException,

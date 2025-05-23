@@ -3,7 +3,7 @@ from sqlalchemy.future import select
 from sqlalchemy.exc import IntegrityError
 from typing import Optional, List, Dict, Any
 
-from models.shop import Shop
+from services.seller_service.models.shop import Shop
 from common.exceptions.http_exceptions import (
     ResourceNotFoundException,
     DatabaseException,

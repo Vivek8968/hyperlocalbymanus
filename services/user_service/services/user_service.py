@@ -3,7 +3,7 @@ from sqlalchemy.future import select
 from sqlalchemy.exc import IntegrityError
 from typing import Optional, List, Dict, Any
 
-from models.user import User, UserRole
+from services.user_service.models.user import User, UserRole
 from common.exceptions.http_exceptions import (
     ResourceNotFoundException,
     DatabaseException,

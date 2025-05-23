@@ -30,7 +30,7 @@ class ShopDistance(ShopBase):
     distance: float  # Distance in kilometers
     
     class Config:
-        orm_mode = True
+        from_attributes = True
 
 
 class ShopSearchResponse(BaseModel):
@@ -53,7 +53,7 @@ class ShopDetailResponse(ShopBase):
     updated_at: datetime
     
     class Config:
-        orm_mode = True
+        from_attributes = True
 
 
 class ProductBrief(BaseModel):
@@ -71,7 +71,7 @@ class ProductBrief(BaseModel):
     stock: int
     
     class Config:
-        orm_mode = True
+        from_attributes = True
 
 
 class ShopWithProductsResponse(ShopDetailResponse):
@@ -81,4 +81,4 @@ class ShopWithProductsResponse(ShopDetailResponse):
     products: List[ProductBrief] = []
     
     class Config:
-        orm_mode = True
+        from_attributes = True

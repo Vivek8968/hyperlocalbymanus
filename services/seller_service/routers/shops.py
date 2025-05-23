@@ -14,8 +14,8 @@ from common.exceptions.http_exceptions import ResourceNotFoundException, Unautho
 from common.utils.s3 import S3Service
 
 # Import schemas and services
-from schemas.shop import ShopCreate, ShopUpdate, ShopResponse, ImageUploadResponse
-from services.shop_service import ShopService
+from services.seller_service.schemas.shop import ShopCreate, ShopUpdate, ShopResponse, ImageUploadResponse
+from services.seller_service.services.shop_service import ShopService
 
 router = APIRouter()
 oauth2_scheme = OAuth2PasswordBearer(tokenUrl="auth/login")

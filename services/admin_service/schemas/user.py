@@ -15,7 +15,7 @@ class UserAdminBase(BaseModel):
     email: Optional[EmailStr] = None
     phone: Optional[str] = Field(None, min_length=10, max_length=15)
     full_name: Optional[str] = Field(None, min_length=2, max_length=100)
-    role: Optional[str] = Field(None, regex=r'^(customer|seller|admin)$')
+    role: Optional[str] = Field(None, pattern=r'^(customer|seller|admin)$')
     is_active: Optional[bool] = None
 
 
@@ -41,7 +41,7 @@ class UserAdminResponse(BaseModel):
     firebase_uid: Optional[str] = None
     
     class Config:
-        orm_mode = True
+        from_attributes = True
 
 
 class UserAdminSearchResponse(BaseModel):

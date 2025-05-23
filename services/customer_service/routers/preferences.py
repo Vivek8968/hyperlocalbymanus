@@ -12,8 +12,8 @@ from common.auth.jwt import get_current_user
 from common.exceptions.http_exceptions import ResourceNotFoundException
 
 # Import schemas and services
-from schemas.preference import PreferenceCreate, PreferenceUpdate, PreferenceResponse
-from services.preference_service import PreferenceService
+from services.customer_service.schemas.preference import PreferenceCreate, PreferenceUpdate, PreferenceResponse
+from services.customer_service.services.preference_service import PreferenceService
 
 router = APIRouter()
 oauth2_scheme = OAuth2PasswordBearer(tokenUrl="auth/login")
