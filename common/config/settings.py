@@ -15,11 +15,13 @@ class Settings(BaseSettings):
     DEBUG: bool = os.getenv("DEBUG", "False").lower() in ("true", "1", "t")
     
     # Database settings
+    DB_TYPE: str = os.getenv("DB_TYPE", "mysql")
     DB_HOST: str = os.getenv("DB_HOST", "localhost")
     DB_PORT: int = int(os.getenv("DB_PORT", "3306"))
     DB_USER: str = os.getenv("DB_USER", "root")
     DB_PASSWORD: str = os.getenv("DB_PASSWORD", "password")
     DB_NAME: str = os.getenv("DB_NAME", "hyperlocal_marketplace")
+    DB_PATH: str = os.getenv("DB_PATH", "/workspace/localmarket/hyperlocal.db")
     
     # Database URL
     @property
@@ -27,7 +29,10 @@ class Settings(BaseSettings):
         """
         Get async database URL for SQLAlchemy
         """
-        return f"mysql+aiomysql://{self.DB_USER}:{self.DB_PASSWORD}@{self.DB_HOST}:{self.DB_PORT}/{self.DB_NAME}"
+        if self.DB_TYPE.lower() == "sqlite":
+            return f"sqlite+aiosqlite:///{self.DB_PATH}"
+        else:
+            return f"mysql+aiomysql://{self.DB_USER}:{self.DB_PASSWORD}@{self.DB_HOST}:{self.DB_PORT}/{self.DB_NAME}"
     
     # JWT settings
     JWT_SECRET_KEY: str = os.getenv("JWT_SECRET_KEY", "your-secret-key")
