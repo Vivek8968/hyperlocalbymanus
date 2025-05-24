@@ -1,6 +1,6 @@
 from fastapi import FastAPI, Request, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
-from fastapi.responses import JSONResponse
+from fastapi.responses import JSONResponse, HTMLResponse, FileResponse
 import uvicorn
 import json
 import random
@@ -522,22 +522,29 @@ async def create_vendor_shop(request: Request):
     
     return create_response(shop)
 
+# Serve download page
+@app.get("/")
+async def serve_download_page():
+    html_path = "/workspace/apk/download.html"
+    if not os.path.exists(html_path):
+        raise HTTPException(status_code=404, detail="Download page not found")
+    
+    with open(html_path, "r") as f:
+        html_content = f.read()
+    
+    return HTMLResponse(content=html_content)
+
 # Serve APK file
-@app.get("/download")
+@app.get("/api/download")
 async def download_apk():
     apk_path = "/workspace/apk/localmarket.apk"
     if not os.path.exists(apk_path):
         raise HTTPException(status_code=404, detail="APK file not found")
     
-    with open(apk_path, "rb") as f:
-        apk_data = f.read()
-    
-    return JSONResponse(
-        content={"message": "APK file is available for download"},
-        headers={
-            "Content-Disposition": "attachment; filename=localmarket.apk",
-            "Content-Type": "application/vnd.android.package-archive"
-        }
+    return FileResponse(
+        path=apk_path,
+        filename="localmarket.apk",
+        media_type="application/vnd.android.package-archive"
     )
 
 if __name__ == "__main__":
