@@ -1,64 +1,45 @@
-INFO:     Will watch for changes in these directories: ['/workspace/backend']
+INFO:     Will watch for changes in these directories: ['/workspace/hyperlocalbymanus']
 INFO:     Uvicorn running on http://0.0.0.0:12000 (Press CTRL+C to quit)
-INFO:     Started reloader process [2770] using StatReload
-INFO:     Started server process [2774]
+INFO:     Started reloader process [14412] using StatReload
+INFO:     Started server process [14416]
 INFO:     Waiting for application startup.
 INFO:     Application startup complete.
-INFO:     127.0.0.1:59068 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50274 - "POST /auth/register HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50276 - "POST /auth/login HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50280 - "POST /auth/verify-token HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50292 - "GET /users/me HTTP/1.1" 200 OK
-INFO:     127.0.0.1:53508 - "GET /shops HTTP/1.1" 200 OK
-INFO:     127.0.0.1:53514 - "GET /shops?latitude=28.6139&longitude=77.2090 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:53518 - "GET /shops/shop1 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:53522 - "GET /shops/shop1/products HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50018 - "GET /vendor/shop HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50034 - "POST /shops HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50048 - "GET /vendor/products HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50052 - "POST /shops/shop5/products HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55376 - "GET /catalog HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55378 - "GET /catalog/categories HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55394 - "GET /catalog?search=rice HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55410 - "GET /catalog?category=Dairy HTTP/1.1" 200 OK
-INFO:     127.0.0.1:44122 - "POST /vendor/products/add-from-catalog HTTP/1.1" 200 OK
-INFO:     127.0.0.1:44138 - "PUT /shops/shop5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:44140 - "PUT /vendor/shop HTTP/1.1" 200 OK
-INFO:     127.0.0.1:44152 - "GET /vendor/products HTTP/1.1" 200 OK
-INFO:     127.0.0.1:38890 - "GET /shops/shop5/products HTTP/1.1" 200 OK
-INFO:     127.0.0.1:38894 - "GET /products/product6 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:38900 - "PUT /shops/shop5/products/product6 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:38910 - "GET /shops/shop5/products?search=smartphone HTTP/1.1" 200 OK
-INFO:     127.0.0.1:38914 - "GET /shops/shop5/products?sort=price_desc HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49368 - "GET /shops/nonexistent HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:49374 - "GET /products/nonexistent HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:49380 - "DELETE /shops/shop5/products/product6 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49396 - "GET /invalid/endpoint HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:35656 - "POST /auth/register HTTP/1.1" 200 OK
-INFO:     127.0.0.1:35668 - "POST /auth/login HTTP/1.1" 200 OK
-INFO:     127.0.0.1:35670 - "GET /shops?latitude=28.6139&longitude=77.2090 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:35684 - "GET /shops/shop1/products HTTP/1.1" 200 OK
-INFO:     127.0.0.1:35698 - "GET /shops/shop1/products?search=apple HTTP/1.1" 200 OK
-INFO:     127.0.0.1:43170 - "POST /auth/register HTTP/1.1" 200 OK
-INFO:     127.0.0.1:43174 - "POST /auth/login HTTP/1.1" 200 OK
-INFO:     127.0.0.1:43178 - "GET /vendor/shop HTTP/1.1" 200 OK
-INFO:     127.0.0.1:43184 - "POST /vendor/shop HTTP/1.1" 200 OK
-INFO:     127.0.0.1:43196 - "POST /shops/shop6/products HTTP/1.1" 200 OK
-INFO:     127.0.0.1:43198 - "POST /shops/shop6/products HTTP/1.1" 200 OK
-INFO:     127.0.0.1:43206 - "GET /vendor/products HTTP/1.1" 200 OK
-INFO:     127.0.0.1:46840 - "POST /auth/register HTTP/1.1" 200 OK
-INFO:     127.0.0.1:46846 - "POST /auth/login HTTP/1.1" 200 OK
-INFO:     127.0.0.1:46856 - "GET /shops HTTP/1.1" 200 OK
-INFO:     127.0.0.1:46860 - "GET /catalog HTTP/1.1" 200 OK
-INFO:     127.0.0.1:46864 - "GET /catalog/categories HTTP/1.1" 200 OK
-INFO:     127.0.0.1:46868 - "PUT /shops/shop6 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:46882 - "POST /vendor/products/add-from-catalog HTTP/1.1" 200 OK
-INFO:     127.0.0.1:46898 - "GET /shops/shop6/products?category=Electronics&sort=price_desc HTTP/1.1" 200 OK
-INFO:     127.0.0.1:46912 - "GET /shops HTTP/1.1" 200 OK
-INFO:     127.0.0.1:39884 - "GET /nonexistent/endpoint HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:39898 - "POST /auth/register HTTP/1.1" 200 OK
-INFO:     127.0.0.1:39912 - "GET /shops/nonexistent123 HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:39926 - "GET /products/nonexistent123 HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:39930 - "GET /catalog?search= HTTP/1.1" 200 OK
-INFO:     127.0.0.1:39934 - "GET /catalog?category=NonExistentCategory HTTP/1.1" 200 OK
-INFO:     127.0.0.1:39944 - "GET /shops?latitude=999&longitude=999 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47972 - "GET /health HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:36086 - "GET /docs HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36092 - "GET /openapi.json HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58248 - "POST /auth/register HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58248 - "POST /auth/register HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58248 - "POST /auth/register HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58248 - "POST /auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58248 - "GET /sellers/dashboard HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:58248 - "POST /auth/register HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58248 - "POST /sellers/shops HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:48384 - "GET /openapi.json HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37234 - "POST /auth/register HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37234 - "POST /auth/register HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37234 - "POST /auth/register HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37234 - "POST /auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37234 - "GET /shops?latitude=40.7128&longitude=-74.006&radius=10 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37234 - "GET /catalog?category=Fruits HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37234 - "GET /catalog?search=apple HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37234 - "GET /users/me HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37234 - "GET /vendor/shop HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37234 - "POST /auth/register HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37570 - "POST /auth/register HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52280 - "POST /auth/register HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52280 - "POST /auth/register HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52280 - "POST /auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52280 - "POST /auth/register HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52280 - "POST /auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52280 - "POST /auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52280 - "POST /shops HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52280 - "GET /vendor/shop HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52280 - "GET /shops?latitude=40.7128&longitude=-74.006&radius=10 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52280 - "GET /catalog?category=Fruits HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52280 - "GET /catalog?search=apple HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52280 - "GET /users/me HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52280 - "GET /shops HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52280 - "GET /catalog/categories HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52280 - "GET /vendor/shop HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52280 - "POST /auth/register HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52280 - "POST /shops HTTP/1.1" 200 OK

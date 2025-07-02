@@ -1,0 +1,422 @@
+{
+  "test_summary": {
+    "total_tests": 15,
+    "passed_tests": 12,
+    "failed_tests": 3,
+    "skipped_tests": 0,
+    "success_rate": 80.0,
+    "test_date": "2025-07-02T18:30:06.742741"
+  },
+  "test_results": [
+    {
+      "test_name": "Customer Registration",
+      "status": "PASS",
+      "details": "Customer registered with ID: user12",
+      "timestamp": "2025-07-02T18:30:06.016131",
+      "response_data": {
+        "status": true,
+        "message": "Success",
+        "data": {
+          "id": "user12",
+          "name": "",
+          "email": "customer@test.com",
+          "phone": "+1234567890",
+          "role": "customer"
+        }
+      }
+    },
+    {
+      "test_name": "Seller Registration",
+      "status": "PASS",
+      "details": "Seller registered with ID: user13",
+      "timestamp": "2025-07-02T18:30:06.062170",
+      "response_data": {
+        "status": true,
+        "message": "Success",
+        "data": {
+          "id": "user13",
+          "name": "",
+          "email": "seller@test.com",
+          "phone": "+1234567891",
+          "role": "seller"
+        }
+      }
+    },
+    {
+      "test_name": "Admin Registration",
+      "status": "PASS",
+      "details": "Admin registered with ID: user14",
+      "timestamp": "2025-07-02T18:30:06.154149",
+      "response_data": {
+        "status": true,
+        "message": "Success",
+        "data": {
+          "id": "user14",
+          "name": "",
+          "email": "admin@test.com",
+          "phone": "+1234567892",
+          "role": "admin"
+        }
+      }
+    },
+    {
+      "test_name": "User Login",
+      "status": "PASS",
+      "details": "Login successful for customer",
+      "timestamp": "2025-07-02T18:30:06.246115",
+      "response_data": {
+        "status": true,
+        "message": "Success",
+        "data": {
+          "token": "mock_token_17400",
+          "user": {
+            "id": "user3",
+            "name": "",
+            "email": "customer@test.com",
+            "phone": "+1234567890",
+            "role": "customer"
+          }
+        }
+      }
+    },
+    {
+      "test_name": "Create Shop",
+      "status": "PASS",
+      "details": "Shop created with ID: None",
+      "timestamp": "2025-07-02T18:30:06.294147",
+      "response_data": {
+        "status": true,
+        "message": "Success",
+        "data": {
+          "id": "shop5",
+          "name": "Fresh Mart Demo",
+          "description": "Your neighborhood grocery store for testing",
+          "address": "123 Test Street, Demo City, DC 12345",
+          "latitude": 40.7128,
+          "longitude": -74.006,
+          "distance": 0.8226018677454514,
+          "distanceFormatted": "4.8 km",
+          "category": "Grocery",
+          "rating": 0.0,
+          "imageUrl": "https://images.unsplash.com/photo-1542838132-92c53300491e?q=80&w=1000&auto=format&fit=crop",
+          "ownerId": "user1",
+          "isOpen": true,
+          "openingTime": "09:00",
+          "closingTime": "21:00"
+        }
+      }
+    },
+    {
+      "test_name": "Seller Dashboard",
+      "status": "PASS",
+      "details": "Dashboard data retrieved",
+      "timestamp": "2025-07-02T18:30:06.338142",
+      "response_data": {
+        "status": true,
+        "message": "Success",
+        "data": {
+          "id": "shop4",
+          "name": "My Shop",
+          "description": "My shop description",
+          "address": "My shop address",
+          "latitude": 28.6139,
+          "longitude": 77.209,
+          "distance": 0.0,
+          "distanceFormatted": "0.0 km",
+          "category": "Grocery",
+          "rating": 0.0,
+          "imageUrl": "https://images.unsplash.com/photo-1542838132-92c53300491e?q=80&w=1000&auto=format&fit=crop",
+          "ownerId": "user1",
+          "isOpen": true,
+          "openingTime": "09:00",
+          "closingTime": "21:00"
+        }
+      }
+    },
+    {
+      "test_name": "Discover Nearby Shops",
+      "status": "PASS",
+      "details": "Found 0 shops",
+      "timestamp": "2025-07-02T18:30:06.386125",
+      "response_data": {
+        "status": true,
+        "message": "Success",
+        "data": [
+          {
+            "id": "shop1",
+            "name": "Grocery Store",
+            "description": "Fresh groceries and daily essentials",
+            "address": "123 Main St, City",
+            "latitude": 28.6139,
+            "longitude": 77.209,
+            "distance": 1.2,
+            "distanceFormatted": "1.2 km",
+            "category": "Grocery",
+            "rating": 4.5,
+            "imageUrl": "https://images.unsplash.com/photo-1542838132-92c53300491e?q=80&w=1000&auto=format&fit=crop",
+            "ownerId": "user2",
+            "isOpen": true,
+            "openingTime": "09:00",
+            "closingTime": "21:00"
+          },
+          {
+            "id": "shop2",
+            "name": "Electronics Shop",
+            "description": "Latest electronics and gadgets",
+            "address": "456 Tech St, City",
+            "latitude": 28.6219,
+            "longitude": 77.219,
+            "distance": 2.5,
+            "distanceFormatted": "2.5 km",
+            "category": "Electronics",
+            "rating": 4.2,
+            "imageUrl": "https://images.unsplash.com/photo-1550009158-9ebf69173e03?q=80&w=1000&auto=format&fit=crop",
+            "ownerId": "user2",
+            "isOpen": true,
+            "openingTime": "10:00",
+            "closingTime": "20:00"
+          },
+          {
+            "id": "shop3",
+            "name": "Fashion Boutique",
+            "description": "Trendy clothes and accessories",
+            "address": "789 Fashion Ave, City",
+            "latitude": 28.6319,
+            "longitude": 77.229,
+            "distance": 3.8,
+            "distanceFormatted": "3.8 km",
+            "category": "Fashion",
+            "rating": 4.7,
+            "imageUrl": "https://images.unsplash.com/photo-1567401893414-76b7b1e5a7a5?q=80&w=1000&auto=format&fit=crop",
+            "ownerId": "user2",
+            "isOpen": false,
+            "openingTime": "11:00",
+            "closingTime": "19:00"
+          },
+          {
+            "id": "shop4",
+            "name": "My Shop",
+            "description": "My shop description",
+            "address": "My shop address",
+            "latitude": 28.6139,
+            "longitude": 77.209,
+            "distance": 0.0,
+            "distanceFormatted": "0.0 km",
+            "category": "Grocery",
+            "rating": 0.0,
+            "imageUrl": "https://images.unsplash.com/photo-1542838132-92c53300491e?q=80&w=1000&auto=format&fit=crop",
+            "ownerId": "user1",
+            "isOpen": true,
+            "openingTime": "09:00",
+            "closingTime": "21:00"
+          },
+          {
+            "id": "shop5",
+            "name": "Fresh Mart Demo",
+            "description": "Your neighborhood grocery store for testing",
+            "address": "123 Test Street, Demo City, DC 12345",
+            "latitude": 40.7128,
+            "longitude": -74.006,
+            "distance": 0.8226018677454514,
+            "distanceFormatted": "4.8 km",
+            "category": "Grocery",
+            "rating": 0.0,
+            "imageUrl": "https://images.unsplash.com/photo-1542838132-92c53300491e?q=80&w=1000&auto=format&fit=crop",
+            "ownerId": "user1",
+            "isOpen": true,
+            "openingTime": "09:00",
+            "closingTime": "21:00"
+          }
+        ]
+      }
+    },
+    {
+      "test_name": "Browse Products by Category",
+      "status": "PASS",
+      "details": "Found 0 products",
+      "timestamp": "2025-07-02T18:30:06.430131",
+      "response_data": {
+        "status": true,
+        "message": "Success",
+        "data": []
+      }
+    },
+    {
+      "test_name": "Search Products",
+      "status": "PASS",
+      "details": "Search returned 0 results",
+      "timestamp": "2025-07-02T18:30:06.474132",
+      "response_data": {
+        "status": true,
+        "message": "Success",
+        "data": []
+      }
+    },
+    {
+      "test_name": "Get User Profile",
+      "status": "PASS",
+      "details": "Profile retrieved successfully",
+      "timestamp": "2025-07-02T18:30:06.518252",
+      "response_data": {
+        "status": true,
+        "message": "Success",
+        "data": {
+          "id": "user1",
+          "name": "John Doe",
+          "email": "john@example.com",
+          "phone": "1234567890",
+          "role": "customer"
+        }
+      }
+    },
+    {
+      "test_name": "View All Shops",
+      "status": "PASS",
+      "details": "Retrieved shops data",
+      "timestamp": "2025-07-02T18:30:06.562171",
+      "response_data": {
+        "status": true,
+        "message": "Success",
+        "data": [
+          {
+            "id": "shop1",
+            "name": "Grocery Store",
+            "description": "Fresh groceries and daily essentials",
+            "address": "123 Main St, City",
+            "latitude": 28.6139,
+            "longitude": 77.209,
+            "distance": 1.2,
+            "distanceFormatted": "1.2 km",
+            "category": "Grocery",
+            "rating": 4.5,
+            "imageUrl": "https://images.unsplash.com/photo-1542838132-92c53300491e?q=80&w=1000&auto=format&fit=crop",
+            "ownerId": "user2",
+            "isOpen": true,
+            "openingTime": "09:00",
+            "closingTime": "21:00"
+          },
+          {
+            "id": "shop2",
+            "name": "Electronics Shop",
+            "description": "Latest electronics and gadgets",
+            "address": "456 Tech St, City",
+            "latitude": 28.6219,
+            "longitude": 77.219,
+            "distance": 2.5,
+            "distanceFormatted": "2.5 km",
+            "category": "Electronics",
+            "rating": 4.2,
+            "imageUrl": "https://images.unsplash.com/photo-1550009158-9ebf69173e03?q=80&w=1000&auto=format&fit=crop",
+            "ownerId": "user2",
+            "isOpen": true,
+            "openingTime": "10:00",
+            "closingTime": "20:00"
+          },
+          {
+            "id": "shop3",
+            "name": "Fashion Boutique",
+            "description": "Trendy clothes and accessories",
+            "address": "789 Fashion Ave, City",
+            "latitude": 28.6319,
+            "longitude": 77.229,
+            "distance": 3.8,
+            "distanceFormatted": "3.8 km",
+            "category": "Fashion",
+            "rating": 4.7,
+            "imageUrl": "https://images.unsplash.com/photo-1567401893414-76b7b1e5a7a5?q=80&w=1000&auto=format&fit=crop",
+            "ownerId": "user2",
+            "isOpen": false,
+            "openingTime": "11:00",
+            "closingTime": "19:00"
+          },
+          {
+            "id": "shop4",
+            "name": "My Shop",
+            "description": "My shop description",
+            "address": "My shop address",
+            "latitude": 28.6139,
+            "longitude": 77.209,
+            "distance": 0.0,
+            "distanceFormatted": "0.0 km",
+            "category": "Grocery",
+            "rating": 0.0,
+            "imageUrl": "https://images.unsplash.com/photo-1542838132-92c53300491e?q=80&w=1000&auto=format&fit=crop",
+            "ownerId": "user1",
+            "isOpen": true,
+            "openingTime": "09:00",
+            "closingTime": "21:00"
+          },
+          {
+            "id": "shop5",
+            "name": "Fresh Mart Demo",
+            "description": "Your neighborhood grocery store for testing",
+            "address": "123 Test Street, Demo City, DC 12345",
+            "latitude": 40.7128,
+            "longitude": -74.006,
+            "distance": 0.8226018677454514,
+            "distanceFormatted": "4.8 km",
+            "category": "Grocery",
+            "rating": 0.0,
+            "imageUrl": "https://images.unsplash.com/photo-1542838132-92c53300491e?q=80&w=1000&auto=format&fit=crop",
+            "ownerId": "user1",
+            "isOpen": true,
+            "openingTime": "09:00",
+            "closingTime": "21:00"
+          }
+        ]
+      }
+    },
+    {
+      "test_name": "View Categories",
+      "status": "PASS",
+      "details": "Retrieved categories data",
+      "timestamp": "2025-07-02T18:30:06.606113",
+      "response_data": {
+        "status": true,
+        "message": "Success",
+        "data": [
+          "Grocery",
+          "Electronics",
+          "Fashion",
+          "Dairy",
+          "Bakery",
+          "Fruits",
+          "Vegetables",
+          "Clothing"
+        ]
+      }
+    },
+    {
+      "test_name": "Invalid Token Handling",
+      "status": "FAIL",
+      "details": "Expected 401, got 200",
+      "timestamp": "2025-07-02T18:30:06.654235",
+      "response_data": null
+    },
+    {
+      "test_name": "Duplicate Registration Handling",
+      "status": "FAIL",
+      "details": "Expected 400, got 200",
+      "timestamp": "2025-07-02T18:30:06.698114",
+      "response_data": null
+    },
+    {
+      "test_name": "Data Validation",
+      "status": "FAIL",
+      "details": "Expected 422, got 200",
+      "timestamp": "2025-07-02T18:30:06.742359",
+      "response_data": null
+    }
+  ],
+  "test_data": {
+    "customer_id": "user12",
+    "seller_id": "user13",
+    "admin_id": "user14",
+    "shop_id": null
+  },
+  "tokens": {
+    "seller": "***REDACTED***",
+    "admin": "***REDACTED***",
+    "customer": "***REDACTED***"
+  }
+}
